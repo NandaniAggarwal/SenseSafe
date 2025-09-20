@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SenseSafe Design System - Soft Pastel Colors for Sensory-Friendly Experience
+All colors MUST be HSL and follow accessibility guidelines.
+*/
+
+@layer base {
+  :root {
+    /* Main Background - Soft cream for comfort */
+    --background: 45 23% 97%;
+    --foreground: 215 25% 27%;
+
+    /* Card surfaces - Slightly elevated with warmth */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    /* Popover surfaces */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Primary - Soft sage green for calm navigation */
+    --primary: 151 25% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 151 35% 85%;
+    --primary-hover: 151 30% 55%;
+
+    /* Secondary - Gentle lavender for secondary actions */  
+    --secondary: 260 25% 85%;
+    --secondary-foreground: 215 25% 27%;
+    --secondary-soft: 260 30% 92%;
+
+    /* Muted elements - Very soft neutral */
+    --muted: 45 15% 94%;
+    --muted-foreground: 215 15% 50%;
+
+    /* Accent - Soft peach for highlights */
+    --accent: 25 35% 82%;
+    --accent-foreground: 215 25% 27%;
+    --accent-soft: 25 40% 90%;
+
+    /* States */
+    --success: 120 25% 70%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 50% 75%;
+    --warning-foreground: 215 25% 27%;
+    --destructive: 5 40% 75%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs - Very subtle */
+    --border: 45 20% 88%;
+    --input: 45 20% 88%;
+    --ring: 151 25% 65%;
+
+    /* Gradients for visual appeal */
+    --gradient-primary: linear-gradient(135deg, hsl(151 25% 65%), hsl(151 35% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(260 25% 85%), hsl(260 30% 90%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 35% 82%), hsl(25 40% 88%));
+    --gradient-background: linear-gradient(135deg, hsl(45 23% 97%), hsl(0 0% 100%));
+
+    /* Shadows - Soft and subtle */
+    --shadow-soft: 0 2px 8px -2px hsl(215 25% 27% / 0.08);
+    --shadow-medium: 0 4px 16px -4px hsl(215 25% 27% / 0.12);
+    --shadow-glow: 0 0 20px hsl(151 25% 65% / 0.15);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with muted pastels for comfort */
+    --background: 215 25% 12%;
+    --foreground: 45 23% 92%;
+
+    --card: 215 25% 15%;
+    --card-foreground: 45 23% 92%;
+
+    --popover: 215 25% 15%;
+    --popover-foreground: 45 23% 92%;
+
+    --primary: 151 25% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 151 20% 25%;
+    --primary-hover: 151 30% 45%;
+
+    --secondary: 260 15% 25%;
+    --secondary-foreground: 45 23% 92%;
+    --secondary-soft: 260 20% 20%;
+
+    --muted: 215 20% 18%;
+    --muted-foreground: 215 10% 65%;
+
+    --accent: 25 25% 35%;
+    --accent-foreground: 45 23% 92%;
+    --accent-soft: 25 20% 25%;
+
+    --success: 120 20% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 35% 55%;
+    --warning-foreground: 215 25% 12%;
+    --destructive: 5 35% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 151 25% 55%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(151 25% 55%), hsl(151 30% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(260 15% 25%), hsl(260 20% 20%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 25% 35%), hsl(25 20% 25%));
+    --gradient-background: linear-gradient(135deg, hsl(215 25% 12%), hsl(215 20% 15%));
+
+    --shadow-soft: 0 2px 8px -2px hsl(0 0% 0% / 0.15);
+    --shadow-medium: 0 4px 16px -4px hsl(0 0% 0% / 0.25);
+    --shadow-glow: 0 0 20px hsl(151 25% 55% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-background to-background;
+    background: var(--gradient-background);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  /* Smooth animations for better UX */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+
+  /* Interactive elements */
+  .interactive-card {
+    @apply transition-all duration-300 hover:shadow-glow hover:-translate-y-1;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .button-primary {
+    background: var(--gradient-primary);
+    @apply shadow-soft hover:shadow-medium transition-all duration-200 hover:scale-105;
+  }
+  
+  .button-secondary {
+    background: var(--gradient-secondary);
+    @apply shadow-soft hover:shadow-medium transition-all duration-200 hover:scale-105;
+  }
+
+  /* Sensory-friendly focus styles */
+  .focus-soft {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
